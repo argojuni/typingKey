@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   questions:
-  - question: 1
+  - question: qwer
     answers:
-    - 1
-  - question: 2
+    - qwer
+  - question: qwsa
     answers:
-    - 2
-  - question: 3
+    - qwsa
+  - question: qwjkl
     answers:
-    - 3
+    - qwjkl

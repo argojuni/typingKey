@@ -1,27 +1,40 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class QuizManager : MonoBehaviour
 {
-    public Text questionText;
-    public InputField answerInputField;
-    public Text resultText;
+    public TextMeshProUGUI questionText;
+    public TMP_InputField answerInputField;
+    public TextMeshProUGUI resultText;
 
     public QuizData quizData;
-    private QuestionData[] questions;
+    private List<QuestionData> questions;
     private int currentQuestionIndex;
 
     private void Start()
     {
-        questions = quizData.questions;
+        questions = new List<QuestionData>(quizData.questions);
+        ShuffleQuestions();
         currentQuestionIndex = 0;
         DisplayQuestion();
     }
 
+    private void ShuffleQuestions()
+    {
+        for (int i = 0; i < questions.Count - 1; i++)
+        {
+            int randomIndex = Random.Range(i, questions.Count);
+            QuestionData temp = questions[i];
+            questions[i] = questions[randomIndex];
+            questions[randomIndex] = temp;
+        }
+    }
+
     public void DisplayQuestion()
     {
-        if (currentQuestionIndex < questions.Length)
+        if (currentQuestionIndex < questions.Count)
         {
             QuestionData currentQuestion = questions[currentQuestionIndex];
             string question = currentQuestion.question;
@@ -37,7 +50,7 @@ public class QuizManager : MonoBehaviour
 
     public void SubmitAnswer()
     {
-        if (currentQuestionIndex < questions.Length)
+        if (currentQuestionIndex < questions.Count)
         {
             QuestionData currentQuestion = questions[currentQuestionIndex];
             string userAnswer = answerInputField.text.Trim().ToLower();
