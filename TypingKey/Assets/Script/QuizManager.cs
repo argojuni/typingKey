@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class QuizManager : MonoBehaviour
     private int currentQuestionIndex;
 
     public GameObject[] zombie_male;
+    [SerializeField] private GameObject congratsPanel;
+
     private Animator[] anim;
     private void Start()
     {
@@ -27,6 +30,8 @@ public class QuizManager : MonoBehaviour
         ShuffleQuestions();
         currentQuestionIndex = 0;
         DisplayQuestion();
+
+        congratsPanel.SetActive(false);
     }
 
     private void ShuffleQuestions()
@@ -65,6 +70,7 @@ public class QuizManager : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX("win");
             Debug.Log("Quiz completed!");
+            congratsPanel.SetActive(true);
             for (int i = 0; i < anim.Length; i++)
             {
                 if (anim[i] != null)
@@ -131,5 +137,17 @@ public class QuizManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         DisplayQuestion();
+    }
+
+    public void btnrestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        AudioManager.Instance.PlaySFX("btnclick");
+    }
+
+    public void btnnext(string nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+        AudioManager.Instance.PlaySFX("btnclick");
     }
 }

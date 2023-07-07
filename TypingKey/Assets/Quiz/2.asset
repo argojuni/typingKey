@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd37139ca0fe442b96848758095ebf, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  questions:
+  - question: as;'
+    answers:
+    - as;'
+  - question: a.sf.
+    answers:
+    - a.sf.
+  - question: pwo;,
+    answers:
+    - pwo;,
+  - question: /awl
+    answers:
+    - /awl
+  - question: 12;[2
+    answers:
+    - 12;[2
+  - question: '][212'
+    answers:
+    - '][212'
+  - question: '[12ds;'
+    answers:
+    - '[12ds;'
+  - question: 1900
+    answers:
+    - 1900
+  - question: 2919
+    answers:
+    - 2919
+  - question: 672;[]
+    answers:
+    - 672;[]
+  - question: ',.s/a'
+    answers:
+    - ',.s/a'
+  - question: 12`0
+    answers:
+    - 12`0
+  - question: '][\qw'
+    answers:
+    - '][\qw'
+  - question: ;'.,/
+    answers:
+    - ;'.,/
+  - question: \][qs
+    answers:
+    - \][qs
+  - question: asn';
+    answers:
+    - asn';
+  - question: ']\[;;'
+    answers:
+    - ']\[;;'
+  - question: qw[sa
+    answers:
+    - qw[sa
+  - question: 120-aa
+    answers:
+    - 120-aa
+  - question: =asd';
+    answers:
+    - =asd';
+  - question: 4ku0
+    answers:
+    - 4ku0
+  - question: '`1=-;'
+    answers:
+    - '`1=-;'
+  - question: \\][[
+    answers:
+    - \\][[
+  - question: ma[pqw
+    answers:
+    - ma[pqw
+  - question: '][w;;q'
+    answers:
+    - '][w;;q'
