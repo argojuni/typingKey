@@ -8,5 +8,6 @@ public class Menu : MonoBehaviour
     public void btnStart(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
+        AudioManager.Instance.PlaySFX("btnclick");
     }
 }

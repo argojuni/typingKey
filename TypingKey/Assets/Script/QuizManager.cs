@@ -13,12 +13,15 @@ public class QuizManager : MonoBehaviour
     private List<QuestionData> questions;
     private int currentQuestionIndex;
 
-    public GameObject zombie_male;
-    private Animator anim;
-
+    public GameObject[] zombie_male;
+    private Animator[] anim;
     private void Start()
     {
-        anim = zombie_male.GetComponent<Animator>();
+        anim = new Animator[zombie_male.Length];
+        for(int i=0; i<anim.Length; i++)
+        {
+            anim[i] = zombie_male[i].GetComponent<Animator>();
+        }
 
         questions = new List<QuestionData>(quizData.questions);
         ShuffleQuestions();
@@ -46,17 +49,31 @@ public class QuizManager : MonoBehaviour
             questionText.text = question;
             answerInputField.text = "";
             resultText.text = "";
-            anim.SetBool("idle", true);
-            anim.SetBool("dead", false);
-            anim.SetBool("hurt", false);
-            anim.SetBool("attack", false);
+
+            for (int i =0; i<anim.Length; i++)
+            {
+                if(anim[i] != null)
+                {
+                    anim[i].SetBool("idle", true);
+                    anim[i].SetBool("dead", false);
+                    anim[i].SetBool("hurt", false);
+                    anim[i].SetBool("attack", false);
+                }
+            }
         }
         else
         {
+            AudioManager.Instance.PlaySFX("win");
             Debug.Log("Quiz completed!");
-            anim.SetBool("dead", true);
-            anim.SetBool("idle", false);
-            anim.SetBool("hurt", false);
+            for (int i = 0; i < anim.Length; i++)
+            {
+                if (anim[i] != null)
+                {
+                    anim[i].SetBool("dead", true);
+                    anim[i].SetBool("idle", false);
+                    anim[i].SetBool("hurt", false);
+                }
+            }
         }
     }
 
@@ -80,9 +97,16 @@ public class QuizManager : MonoBehaviour
 
             if (isAnswerCorrect)
             {
-                anim.SetBool("hurt", true);
-                anim.SetBool("idle", false);
-                anim.SetBool("attack", false);
+                for (int i = 0; i < anim.Length; i++)
+                {
+                    if (anim[i] != null)
+                    {
+                        anim[i].SetBool("hurt", true);
+                        anim[i].SetBool("idle", false);
+                        anim[i].SetBool("attack", false);
+                    }
+                }
+                AudioManager.Instance.PlaySFX("correct");
 
                 resultText.text = "Jawaban Benar!";
                 currentQuestionIndex++;
@@ -90,8 +114,14 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                anim.SetBool("attack", true);
-                anim.SetBool("idle", false);
+                for (int i = 0; i < anim.Length; i++)
+                {
+                    if (anim[i] != null)
+                    {
+                        anim[i].SetBool("attack", true);
+                        anim[i].SetBool("idle", false);
+                    }
+                }
                 resultText.text = "Jawaban Salah!";
             }
         }
