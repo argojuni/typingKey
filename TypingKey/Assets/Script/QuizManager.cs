@@ -13,8 +13,13 @@ public class QuizManager : MonoBehaviour
     private List<QuestionData> questions;
     private int currentQuestionIndex;
 
+    public GameObject zombie_male;
+    private Animator anim;
+
     private void Start()
     {
+        anim = zombie_male.GetComponent<Animator>();
+
         questions = new List<QuestionData>(quizData.questions);
         ShuffleQuestions();
         currentQuestionIndex = 0;
@@ -41,10 +46,17 @@ public class QuizManager : MonoBehaviour
             questionText.text = question;
             answerInputField.text = "";
             resultText.text = "";
+            anim.SetBool("idle", true);
+            anim.SetBool("dead", false);
+            anim.SetBool("hurt", false);
+            anim.SetBool("attack", false);
         }
         else
         {
             Debug.Log("Quiz completed!");
+            anim.SetBool("dead", true);
+            anim.SetBool("idle", false);
+            anim.SetBool("hurt", false);
         }
     }
 
@@ -68,12 +80,18 @@ public class QuizManager : MonoBehaviour
 
             if (isAnswerCorrect)
             {
+                anim.SetBool("hurt", true);
+                anim.SetBool("idle", false);
+                anim.SetBool("attack", false);
+
                 resultText.text = "Jawaban Benar!";
                 currentQuestionIndex++;
                 StartCoroutine(NextQuestionWithDelay(1f));
             }
             else
             {
+                anim.SetBool("attack", true);
+                anim.SetBool("idle", false);
                 resultText.text = "Jawaban Salah!";
             }
         }
