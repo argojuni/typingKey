@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd37139ca0fe442b96848758095ebf, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  questions:
+  - question: +_)(*&^
+    answers:
+    - +_)(*&^
+  - question: qw!@a
+    answers:
+    - qw!@a
+  - question: '{}qwd*&'
+    answers:
+    - '{}qwd*&'
+  - question: qop()
+    answers:
+    - qop()
+  - question: qpos1_2
+    answers:
+    - qpos1_2
+  - question: as)()
+    answers:
+    - as)()
+  - question: najsd*(
+    answers:
+    - najsd*(
+  - question: 12*12*12
+    answers:
+    - 12*12*12
+  - question: 9*1*0=0
+    answers:
+    - 9*1*0=0
+  - question: +12-12=
+    answers:
+    - +12-12=
+  - question: =-1asd
+    answers:
+    - =-1asd
+  - question: '<>?:{}:'
+    answers:
+    - '<>?:{}:'
+  - question: '{}|":<>?'
+    answers:
+    - '{}|":<>?'
+  - question: <?~!#@
+    answers:
+    - <?~!#@
+  - question: '!@#(*&%^'
+    answers:
+    - '!@#(*&%^'
+  - question: asj^*
+    answers:
+    - asj^*
+  - question: mcao,.<>
+    answers:
+    - mcao,.<>
+  - question: 'zxcb?":'
+    answers:
+    - 'zxcb?":'
+  - question: '''";:,<.>'
+    answers:
+    - '''";:,<.>'
+  - question: asd?}:"
+    answers:
+    - asd?}:"
+  - question: \[]<>?
+    answers:
+    - \[]<>?
+  - question: asbu*()
+    answers:
+    - asbu*()
+  - question: ASD7<()+_
+    answers:
+    - ASD7<()+_
+  - question: <>:asd
+    answers:
+    - <>:asd
+  - question: ;a'{}?>
+    answers:
+    - ;a'{}?>

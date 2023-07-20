@@ -21,7 +21,7 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         anim = new Animator[zombie_male.Length];
-        for(int i=0; i<anim.Length; i++)
+        for (int i = 0; i < anim.Length; i++)
         {
             anim[i] = zombie_male[i].GetComponent<Animator>();
         }
@@ -55,9 +55,9 @@ public class QuizManager : MonoBehaviour
             answerInputField.text = "";
             resultText.text = "";
 
-            for (int i =0; i<anim.Length; i++)
+            for (int i = 0; i < anim.Length; i++)
             {
-                if(anim[i] != null)
+                if (anim[i] != null)
                 {
                     anim[i].SetBool("idle", true);
                     anim[i].SetBool("dead", false);

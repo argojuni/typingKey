@@ -51,13 +51,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 39ebcab92082f5b4ea2675262e8db512, type: 3}
   sfxSounds:
   - songName: correct
-    clip: {fileID: 8300000, guid: c9fb73ad005f6f94a9b616e2bf8222fe, type: 3}
+    clip: {fileID: 8300000, guid: 518e681652b8f6344994a602508d792c, type: 3}
   - songName: wrong
     clip: {fileID: 8300000, guid: e116161092e7d454ca41884f128d5003, type: 3}
   - songName: lose
     clip: {fileID: 8300000, guid: 3122e9630faf12e418674d4692fd30d8, type: 3}
   - songName: win
     clip: {fileID: 8300000, guid: be458ccfce3568541a85af0a475ae323, type: 3}
+  - songName: btnclick
+    clip: {fileID: 8300000, guid: fea0c88ca2c5386418a2f8633deec84c, type: 3}
   musicSource: {fileID: 7746007380494026626}
   sfxSource: {fileID: 7746007381612674201}
 --- !u!1 &7746007380494026637
@@ -104,7 +106,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
