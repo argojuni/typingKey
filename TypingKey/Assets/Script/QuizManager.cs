@@ -18,6 +18,26 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private GameObject congratsPanel;
 
     private Animator[] anim;
+
+    public KeyCode quitKey = KeyCode.Escape;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(quitKey))
+        {
+            Quit();
+            Debug.Log("Game Quit");
+        }
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+    }
     private void Start()
     {
         anim = new Animator[zombie_male.Length];
